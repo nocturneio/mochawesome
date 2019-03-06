@@ -32,10 +32,7 @@ function done(output, options, config, failures, exit) {
   return marge.create(output, options)
     .then(([ htmlFile, jsonFile ]) => {
       if (!htmlFile && !jsonFile) {
-        log('No files were generated', 'warn', config);
-      } else {
-        jsonFile && log(`Report JSON saved to ${jsonFile}`, null, config);
-        htmlFile && log(`Report HTML saved to ${htmlFile}`, null, config);
+        log('Aucun compte rendu généré', 'warn', config);
       }
     })
     .catch(err => {
@@ -139,7 +136,7 @@ function Mochawesome(runner, options) {
       // required because thrown errors are not handled directly in the
       // event emitter pattern and mocha does not have an "on error"
       /* istanbul ignore next */
-      log(`Problem with mochawesome: ${e.stack}`, 'error');
+      log(`Problem with nocturne-tests: ${e.stack}`, 'error');
     }
   });
 }

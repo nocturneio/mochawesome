@@ -7,3 +7,5 @@ _site/
 coverage/
 .nyc_output/
 dist/
+.idea
+.idea/
